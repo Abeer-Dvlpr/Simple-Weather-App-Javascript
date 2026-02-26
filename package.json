@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A simple weather application",
+  "main": "script.js",
+  "scripts": {
+    "dev": "tailwindcss -i styles.css -o output.css --watch",
+    "build": "tailwindcss -i styles.css -o output.css"
+  },
+  "keywords": [
+    "weather",
+    "app"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+  }
+}
