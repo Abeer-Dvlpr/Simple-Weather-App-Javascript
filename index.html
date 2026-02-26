@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main id="app" class="min-h-screen flex flex-col justify-start items-center">
+        <header class="flex  justify-around items-center">
+            <div class="logo text-2xl p-6 md:text-3xl text-white">Weather App <i class="fa-regular fa-cloud"></i> </div>
+            <div class="SearchBar flex items-center gap-2">
+                <div class="relative w-full max-w-xs">
+                    <input type="text" id="searchField" class="bg-transparent w-full py-1 px-3 rounded-md border-white focus:border-gray-300 border-2 focus-within:text-white focus:text-white placeholder:text-white text-white focus:outline-none hover:border-white md:p-2" placeholder="Enter Your City" autocomplete="off">
+                    <ul id="suggestions" class="hidden absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg max-h-48 overflow-auto z-50"></ul>
+                </div>
+                <button class=" p-1 rounded-md md:p-3 text-white hover:bg-white hover:text-gray-500 md:text-xl" id="searchBtn"><i class="fa-solid fa-search"></i></button>
+            </div>
+        </header>
+        <div class=" flex flex-col justify-center items-center gap-4 mt-20 text-gray-400" id="noLocation">
+            <i class="fa-solid fa-location-dot text-[5rem]"></i>
+            <h1 class="text-xl">No locations added</h1>
+            <h1 class="text-sm">Add a location to see the weather search to add City.</h1>
+            <h2 id="cityName" class="mt-5 text-xl font-bold text-gray-800"></h2>
+        </div>
+
+        <div class=" hidden  flex-col items-center max-h-screen justify-center py-10 font-sans mt-20" id="WeatherCard">
+        <div class="rounded-xl p-4 w-full shadow-2xl glass-effect border-2 border-white border-opacity-30">
+            <div class="p-2 mb-2">
+                <div class="text-center flex justify-center">
+                    <div class='leading-tight text-white' id="CityName"></div>
+                    <div class='leading-tight text-white' id="Country"></div>
+                </div>
+                <div class="flex justify-around">                
+                <div class="text-center">
+                    <h1 class="text-white">Date:</h1>
+                    <div class='leading-tight text-gray-300' id="Date"></div>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-white">Time:</h1>
+                    <div class='leading-tight text-gray-300' id="Time"></div>
+                </div>
+                </div>
+            </div>
+            <div class="p-1 mb-1">
+                <div class="flex">
+                    <div class="flex-1 text-white text-7xl text-center" id="Celsius"><img  id="WIcon"></img></div>
+                </div>
+            </div>
+            <div class="p-2 mb-2">
+                <div class="text-center">
+                    <div class='leading-tight text-white text-lg' id="FeelLike"></div>
+                    <div class='leading-tight text-white text-lg font-bold mt-4' id="WeatherWord"></div>
+                </div>
+            </div>
+            <div class="text-xs text-white mb-1">Today</div>
+            <div class="p-2 mb-2 bg-indigo-200 rounded-xl flex bg-opacity-20 gap-2 items-center justify-center">
+                <div class="flex-1 text-white text-center ">
+                    <div class="flex justify-center gap-2 items-center">
+                    <div class="text-xs">Humidity</div>
+                    <div><i class="fa-solid fa-droplet"></i></div>
+                    </div>
+                    <div class="text-xs" id="Humidity"></div>
+                </div>
+                <div class="flex-1 text-white text-center">
+                    <div class="flex justify-center gap-2 items-center">
+                    <div class="text-xs">Wind</div>
+                    <div><i class="fa-solid fa-wind"></i></div>
+                    </div>
+                    <div class="text-xs" id="Wind"></div>
+                </div>
+                <div class="flex- text-white text-center">
+                    <div class="flex justify-center gap-2 items-center">
+                    <div class="text-xs">Wind Chill</div>
+                    <div><i class="fa-solid fa-smog"></i></div>
+                    </div>
+                    <div class="text-xs" id="WindChill"></div>
+                </div>
+                <div class=" text-white text-center">
+                    <div class="flex justify-center gap-2 items-center">
+                    <div class="text-xs" >Heat Index</div>
+                    <div><i class="fa-solid fa-temperature-arrow-up"></i></div>
+                    </div>
+                    <div class="text-xs" id="HeatIndex"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </main>
+
+    <!-- popup message container -->
+    <div id="popup" class="hidden fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
+        <div class="bg-red-500 text-white px-4 py-2 rounded shadow" id="popupMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
