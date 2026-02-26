@@ -33,8 +33,11 @@ The app fetches **live weather data** from **WeatherAPI** and displays detailed 
 ```javascript
 const apiKey = 'YOUR_API_KEY_HERE'; // <-- Replace with your WeatherAPI key
 ```
-4. Type a city name in the search bar
-5. See live weather updates with dynamic UI
+4. Install Packages using `npm i`.
+5. Run locally using `npm run dev`.
+6. Type a city name in the search bar
+7. See live weather updates with dynamic UI
 
 ---
+
 Happy Coding😊
